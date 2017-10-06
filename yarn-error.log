@@ -1,0 +1,57 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  0.27.5
+
+Node version: 
+  6.10.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "photobook",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "webpack-dev-server --port 3000 --hot --host 0.0.0.0 --watch"
+    },
+    "dependencies": {
+      "extract-text-webpack-plugin": "^3.0.0",
+      "react": "15.6.1",
+      "react-dom": "15.6.1",
+      "react-redux": "^5.0.6",
+      "redux": "^3.7.2",
+    },
+    "devDependencies": {
+      "babel-core": "^6.26.0",
+      "babel-loader": "^7.1.2",
+      "babel-preset-es2017": "^6.24.1",
+      "babel-preset-react": "^6.24.1",
+      "babel-preset-stage-2": "^6.24.1",
+      "html-webpack-plugin": "^2.30.1",
+      "path": "^0.12.7",
+      "webpack": "^3.6.0",
+      "webpack-dev-server": "^2.9.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /Users/minhluong/Work/Others/workshop/demoredux/package.json: Unexpected token } in JSON at position 353
+      at Object.parse (native)
+      at /usr/local/Cellar/yarn/0.27.5/libexec/lib/yarn-cli.js:747:57
+      at next (native)
+      at step (/usr/local/Cellar/yarn/0.27.5/libexec/lib/yarn-cli.js:91:30)
+      at /usr/local/Cellar/yarn/0.27.5/libexec/lib/yarn-cli.js:102:13
