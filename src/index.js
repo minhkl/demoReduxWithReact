@@ -7,8 +7,4 @@ import App from './App'
 
 const store = createStore(reducer)
 
-render(
-    <Provider store={store}>
-        <App/>
-    </Provider>,
-    document.getElementById('root'))
+render(<App store={store}/>, document.getElementById('root'))

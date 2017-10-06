@@ -13,7 +13,7 @@ class App extends Component {
         this.withdraw10 = this.withdraw10.bind(this)
     }
     componentDidMount() {
-        this.unsubscribe = this.context.store.subscribe(() => {
+        this.unsubscribe = this.props.store.subscribe(() => {
             this.forceUpdate()
         })
     }
@@ -22,21 +22,21 @@ class App extends Component {
     }
 
     deposit1() {
-        this.context.store.dispatch(actionDeposit(1))
+        this.props.store.dispatch(actionDeposit(1))
     }
     deposit10() {
-        this.context.store.dispatch(actionDeposit(10))
+        this.props.store.dispatch(actionDeposit(10))
     }
     withdraw1() {
-        this.context.store.dispatch(actionWithdraw(1))
+        this.props.store.dispatch(actionWithdraw(1))
     }
     withdraw10() {
-        this.context.store.dispatch(actionWithdraw(10))
+        this.props.store.dispatch(actionWithdraw(10))
     }
     render() {
         return (
             <div>
-                <p>${this.context.store.getState().balance}</p>
+                <p>${this.props.store.getState().balance}</p>
                 <div>
                     <button onClick={this.deposit1}>Deposit $1</button>
                     <button onClick={this.deposit10}>Deposit $10</button>
@@ -48,8 +48,5 @@ class App extends Component {
             </div>
         )
     }
-}
-App.contextTypes = {
-    store: React.PropTypes.object
 }
 export default App
