@@ -2,7 +2,6 @@
  * Created by minhluong on 10/6/17.
  */
 import React, { Component } from 'react'
-import {actionDeposit, actionWithdraw} from './actions'
 
 class App extends Component {
     constructor() {
@@ -12,31 +11,22 @@ class App extends Component {
         this.withdraw1 = this.withdraw1.bind(this)
         this.withdraw10 = this.withdraw10.bind(this)
     }
-    componentDidMount() {
-        this.unsubscribe = this.props.store.subscribe(() => {
-            this.forceUpdate()
-        })
-    }
-    componentWillUnmount() {
-        this.unsubscribe()
-    }
-
     deposit1() {
-        this.props.store.dispatch(actionDeposit(1))
+        this.props.deposit(1)
     }
     deposit10() {
-        this.props.store.dispatch(actionDeposit(10))
+        this.props.deposit(10)
     }
     withdraw1() {
-        this.props.store.dispatch(actionWithdraw(1))
+        this.props.withdraw(1)
     }
     withdraw10() {
-        this.props.store.dispatch(actionWithdraw(10))
+        this.props.withdraw(10)
     }
     render() {
         return (
             <div>
-                <p>${this.props.store.getState().balance}</p>
+                <p>${this.props.balance}</p>
                 <div>
                     <button onClick={this.deposit1}>Deposit $1</button>
                     <button onClick={this.deposit10}>Deposit $10</button>
@@ -50,3 +40,5 @@ class App extends Component {
     }
 }
 export default App
+
+
